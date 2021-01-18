@@ -18,11 +18,14 @@ export const EditMemo = () => {
 
       <MemoForm
         initialValues={memo}
-        onSubmit={async () => {
+        onSubmit={async (event) => {
           try {
             const updated = await updateMemoMutation({
               where: { id: memo.id },
-              data: { name: "MyNewName" },
+              data: {
+                title: event.target[0].value,
+                body: event.target[1].value,
+              },
             })
             await setQueryData(updated)
             alert("Success!" + JSON.stringify(updated))

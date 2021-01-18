@@ -13,8 +13,10 @@ const MemoForm = ({ initialValues, onSubmit }: MemoFormProps) => {
         onSubmit(event)
       }}
     >
-      <input type="text" />
-      <textarea name="" id="" cols="30" rows="10"></textarea>
+      <input type="text" className="" />
+      <br />
+      <textarea name="" id="" cols={30} rows={10}></textarea>
+      <br />
       <button>Submit</button>
     </form>
   )
