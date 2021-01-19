@@ -2,10 +2,12 @@ import Layout from "app/layouts/Layout"
 import { Link, useRouter, useMutation, BlitzPage } from "blitz"
 import createProject from "app/projects/mutations/createProject"
 import ProjectForm from "app/projects/components/ProjectForm"
+import { useCurrentUser } from "app/hooks/useCurrentUser"
 
 const NewProjectPage: BlitzPage = () => {
   const router = useRouter()
   const [createProjectMutation] = useMutation(createProject)
+  //const currentUser = useCurrentUser()
 
   return (
     <div>

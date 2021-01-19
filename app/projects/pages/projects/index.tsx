@@ -48,7 +48,7 @@ const ProjectsPage: BlitzPage = () => {
         </Link>
       </p>
 
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback="Loading...">
         <ProjectsList />
       </Suspense>
     </div>
