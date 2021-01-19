@@ -44,13 +44,11 @@ model Project {
 }
 
 model Memo {
-  id         Int       @id @default(autoincrement())
-  createdAt  DateTime  @default(now())
-  updatedAt  DateTime  @updatedAt
-  title      String
-  body       String
-  Category   Category? @relation(fields: [categoryId], references: [id])
-  categoryId Int?
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  title     String
+  body      String
 }
 
 model Category {
@@ -58,5 +56,4 @@ model Category {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   name      String
-  memos     Memo[]
 }

@@ -1,6 +1,5 @@
 import { useQuery, useRouter } from "blitz"
 import getCategories from "app/categories/queries/getCategories"
-import { useCurrentUser } from "app/hooks/useCurrentUser"
 import { Category } from "@prisma/client"
 
 const NavItem = ({ category, isActive }: { category: Category; isActive: boolean }) => {
@@ -9,14 +8,13 @@ const NavItem = ({ category, isActive }: { category: Category; isActive: boolean
     : "text-gray-600 border-r-4 border-white hover:bg-gray-100 hover:text-gray-700 hover:border-gray-700"
 
   return (
-    <a href={`/categories/${category}`} className={`flex items-center py-2 px-8 ${className}`}>
+    <a className={`flex items-center py-2 px-8 ${className}`} href={`/${category.name}`}>
       {category.name}
     </a>
   )
 }
 
 const Sidebar = () => {
-  //const currentUser = useCurrentUser()
   const router = useRouter()
   const currentCategoryId = router.params.categoryId
   const [{ categories }] = useQuery(getCategories, {
@@ -27,7 +25,7 @@ const Sidebar = () => {
   return (
     <aside className="bg-white w-60 h-screen sticky top-0">
       <div className="flex items-center justify-center mt-10">
-        <a href="/">メニュー</a>
+        <a href="/">Menu</a>
       </div>
       <nav className="mt-10">
         {categories.map((category) => (

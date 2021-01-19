@@ -19,9 +19,8 @@ const Layout = ({ title, children }: LayoutProps) => {
         <Suspense fallback="Loading...">
           <Sidebar />
         </Suspense>
+        <main className="w-full">{children}</main>
       </div>
-
-      <main className="w-full">{children}</main>
     </>
   )
 }
