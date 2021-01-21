@@ -3,7 +3,7 @@ import { Link } from "blitz"
 type IProps = {
   category: string
 }
-const CreateButton = (props: IProps) => {
+const LinkToAddItem = (props: IProps) => {
   return (
     <p className="my-8 text-center underline">
       <Link href={`/${props.category}s/new`}>
@@ -13,4 +13,4 @@ const CreateButton = (props: IProps) => {
   )
 }
 
-export default CreateButton
+export default LinkToAddItem

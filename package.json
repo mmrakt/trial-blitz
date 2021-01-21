@@ -4,6 +4,7 @@
   "scripts": {
     "start": "blitz start",
     "studio": "blitz prisma studio",
+    "dev": "concurrently --kill-others \"npm run start\" \"npm run studio\"",
     "build": "blitz build",
     "migrate:dev": "blitz prisma migrate dev --preview-feature",
     "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx .",
@@ -35,6 +36,7 @@
     "@prisma/cli": "~2.14",
     "@prisma/client": "~2.14",
     "blitz": "0.29.2",
+    "concurrently": "5.3.0",
     "nanoid": "3.1.20",
     "react": "0.0.0-experimental-3310209d0",
     "react-dom": "0.0.0-experimental-3310209d0",
